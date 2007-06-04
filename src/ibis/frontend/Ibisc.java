@@ -289,16 +289,6 @@ public class Ibisc {
         List<Class> clcomponents = clstr.getClassList("Ibisc-Component", IbiscComponent.class);
         ArrayList<IbiscComponent> components = new ArrayList<IbiscComponent>();
 
-        // If no classes found, at least add IOGenerator.
-        if (clcomponents.size() == 0) {
-            try {
-                Class cl = Class.forName("ibis.util.io.rewriter.IOGenerator");
-                clcomponents.add(cl);
-            } catch(Exception e) {
-                // Ignore
-            }
-        }
-
         // Instantiate Ibisc components.
         for (Class cl : clcomponents) {
             IbiscComponent ic = null;
@@ -341,7 +331,7 @@ public class Ibisc {
         int szm1 = components.size() - 1;
         for (int i = 0; i < szm1; i++) {
             IbiscComponent ic = components.get(i);
-            if (ic instanceof ibis.util.io.rewriter.IOGenerator) {
+            if (ic.getClass().getName().equals("ibis.io.rewriter.IOGenerator")) {
                 components.set(i, components.get(szm1));
                 components.set(szm1, ic);
                 break;
