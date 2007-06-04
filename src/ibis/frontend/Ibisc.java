@@ -363,6 +363,9 @@ public class Ibisc {
                 readAll(leftArgs);
             }
             ic.setWrapper(w);
+            System.out.println("Ibisc: applying rewriter "
+                    + ic.getClass().getName()
+                    + " to " + allClasses.size() + " classes.");
             ic.processClasses(allClasses);
             if (verify) {
                 // Verify after each component.
