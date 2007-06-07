@@ -37,6 +37,8 @@ public class Ibisc {
 
     static ByteCodeWrapper w;
 
+    static ByteCodeWrapper bcelWrapper;
+
     private static ArrayList<IbiscComponent> ibiscComponents
             = new ArrayList<IbiscComponent>();
 
@@ -284,6 +286,8 @@ public class Ibisc {
             }
         }
 
+        bcelWrapper = new BCELWrapper(leftArgs);
+
         // Obtain a list of Ibisc components.
         ClassLister clstr = ClassLister.getClassLister(null);
         List<Class> clcomponents = clstr.getClassList("Ibisc-Component", IbiscComponent.class);
@@ -354,7 +358,7 @@ public class Ibisc {
                 allClasses.clear();
                 wrapperKind = knd;
                 if (knd.equals("BCEL")) {
-                    w = new BCELWrapper(leftArgs);
+                    w = bcelWrapper;
                 } else {
                     System.err.println("Ibisc: component "
                             + ic.getClass().getName()
