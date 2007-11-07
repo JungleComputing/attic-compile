@@ -1,6 +1,6 @@
 /* $Id$ */
 
-package ibis.frontend;
+package ibis.compile;
 
 /**
  * This class maintains information about Java classes.
@@ -17,7 +17,7 @@ class IbiscEntry {
 
     /**
      * Wether the entry was modified. Should be set to <code>true</code> by
-     * any {@link ibis.frontend.IbiscComponent} that modifies this class.
+     * any {@link ibis.compile.IbiscComponent} that modifies this class.
      */
     private boolean     modified = false;
 

@@ -1,6 +1,6 @@
 /* $Id$ */
 
-package ibis.frontend;
+package ibis.compile;
 
 import ibis.util.ClassLister;
 
@@ -16,7 +16,7 @@ import java.util.jar.JarFile;
 import java.util.zip.ZipOutputStream;
 
 /**
- * The main class of the Ibisc frontend.
+ * The main class of the Ibisc compiler.
  * Loads all Ibisc components that are found on the classpath, and runs them
  * all on the specified arguments.
  */
@@ -239,7 +239,7 @@ public class Ibisc {
     }
 
     private static String usage() {
-        String rval = "Usage: java ibis.frontend.Ibisc [-verbose] [-verify] [-keep] [-help] ";
+        String rval = "Usage: java ibis.compile.Ibisc [-verbose] [-verify] [-keep] [-help] ";
         for (int i = 0; i < ibiscComponents.size(); i++) {
             IbiscComponent ic = ibiscComponents.get(i);
             String s = ic.getUsageString();
@@ -279,7 +279,10 @@ public class Ibisc {
                 compress = true;
             } else if (args[i].equals("-no-compress")) {
                 compress = false;
-            } else if (args[i].equals("-help")) {
+            } else if (args[i].equalsIgnoreCase("--help")
+                    || args[i].equalsIgnoreCase("-h")
+                    || args[i].equalsIgnoreCase("-help")
+                    || args[i].equalsIgnoreCase("/?")) {
                 help = true;
             } else {
                 leftArgs.add(args[i]);

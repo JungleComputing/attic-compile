@@ -1,8 +1,8 @@
 /* $Id$ */
 
-package ibis.frontend;
+package ibis.compile;
 
-import ibis.frontend.util.RunJavac;
+import ibis.compile.util.RunJavac;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -11,8 +11,8 @@ import java.util.Iterator;
 
 /**
  * This abstract class must be implemented by all components that are to be part
- * of the Ibis frontend framework, and is the only means through which the
- * Ibis frontend framework communicates with the component.
+ * of the Ibis compiler framework, and is the only means through which the
+ * Ibis compiler framework communicates with the component.
  */
 public abstract class IbiscComponent {
 

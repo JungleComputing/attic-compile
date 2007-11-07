@@ -46,7 +46,6 @@
         <!-- Create the distribution directory -->
         <mkdir dir="${lib}" />
 
-
         <!-- create the javadoc -->
         <javadoc destdir="javadoc" access="public" sourcepath="${src}">
             <classpath refid="external_jars" />

@@ -1,6 +1,6 @@
 /* $Id$ */
 
-package ibis.frontend.util;
+package ibis.compile.util;
 
 import ibis.util.RunProcess;
 
