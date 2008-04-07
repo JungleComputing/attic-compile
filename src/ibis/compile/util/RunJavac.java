@@ -62,7 +62,8 @@ public class RunJavac {
                 }
                 System.out.println("");
             }
-            p = new RunProcess(cmd, new String[0]);
+            p = new RunProcess(cmd);
+            p.run();
             int res = p.getExitStatus();
             byte[] err = p.getStderr();
             byte[] out = p.getStdout();
